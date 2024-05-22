@@ -1,1 +1,1 @@
-export { CarSchema, CarBodySchema } from "./Cars.schemas";
+export { CarSchema, CarBodySchema, CarBodyUpdateSchema } from "./Cars.schemas";

@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { CarsServices } from "../services";
 import { CarControllers } from "../controllers";
 import { ValidateBody, checkExistenceObject } from "../middlewares";
-import { CarBodySchema } from "../schemas";
+import { CarBodySchema, CarBodyUpdateSchema } from "../schemas";
 
 const CarRouter = Router();
 
@@ -22,7 +22,7 @@ CarRouter.get("/:id", checkExistenceObject.execute, (req, res) =>
 CarRouter.patch(
   "/:id",
   checkExistenceObject.execute,
-  ValidateBody.execute(CarBodySchema),
+  ValidateBody.execute(CarBodyUpdateSchema),
   (req, res) => controllers.upDate(req, res)
 );
 

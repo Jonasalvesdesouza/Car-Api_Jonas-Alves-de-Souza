@@ -10,5 +10,6 @@ const CarSchema = z.object({
 });
 
 const CarBodySchema = CarSchema.omit({ id: true });
+const CarBodyUpdateSchema = CarBodySchema.partial();
 
-export { CarSchema, CarBodySchema };
+export { CarSchema, CarBodySchema, CarBodyUpdateSchema };
